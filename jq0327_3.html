@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+</head>
+<body>
+    
+    <div class="box">
+        <div class="sub">
+            <button id="btn1">BUTTON1</button>
+            <button class="btn2">BUTTON2</button>
+            <button class="btn2">BUTTON3</button>
+            <button class="btn2">BUTTON4</button>
+            <button>BUTTON5</button>
+        </div>
+    </div>
+
+
+    <script>
+    
+        $('#btn1').click(function(){
+
+            alert('Hello!')
+
+        });
+
+        $('.btn2:first').on("mouseover",function(){
+            $(this).css("background-color","red");
+            console.log(this);
+            $(this).on("mouseout",function(){
+                $(this).css("background-color","")
+            });
+        });
+        
+
+
+        $('.btn2:last').on("click",function(){
+            //:last는 지정태그의 마지막을 선택한다.
+            alert('din');
+        });
+        $('.btn2:eq(1)').on("click",function(){
+            //:eq는 지정번호의 태그를 선택한다.
+            alert('odd');
+        });
+
+
+    
+    </script>
+
+    
+
+</body>
+</html>
